@@ -25,11 +25,11 @@ int updateData()
             strupr(kelas);
             printf("Ubah Nama Dosen Pengampu : ");
             scanf(" %[^\n]s", &dosen);
-            fprintf(Update, "\n%s+%s+%s+%s+%s+", nim, namaDepan, namaBelakang, kelas, dosen);
+            fprintf(Update, "%s+%s+%s+%s+%s+\n", nim, namaDepan, namaBelakang, kelas, dosen);
         }
         else
         {
-            fprintf(Update, "\n%s+%s+%s+%s+%s+", nim, namaDepan, namaBelakang, kelas, dosen);
+            fprintf(Update, "%s+%s+%s+%s+%s+\n", nim, namaDepan, namaBelakang, kelas, dosen);
         }
     }
     fclose(Baca);

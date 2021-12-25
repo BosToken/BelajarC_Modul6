@@ -56,6 +56,7 @@ int createData()
         if (strcmp(duplikat, nim) == 0)
         {
             printf("Nim Yang Anda Input Sudah Digunakan\n\n");
+            fclose(Baca);
             return 0;
         }
     }
@@ -71,6 +72,7 @@ int createData()
     scanf(" %[^\n]s", &dosen);
 
     printf("Data Berhasil Ditambah\n\n");
-    fprintf(Masuk, "\n%s+%s+%s+%s+%s+", nim, namaDepan, namaBelakang, kelas, dosen);
+    fprintf(Masuk, "%s+%s+%s+%s+%s+\n", nim, namaDepan, namaBelakang, kelas, dosen);
+    fclose(Baca);
     fclose(Masuk);
 }

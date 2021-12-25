@@ -6,37 +6,18 @@ int readData()
     FILE *Baca;
     Baca = fopen("./Data/Data.txt", "r");
 
-    // if (i == 0)
-    // {
-    //     printf("\nData Tidak Tersedia\n");
-    // }
-    // else{
+    while (!feof(Baca))
+    {
+        fscanf(Baca, "%[^+]+%[^+]+%[^+]+%[^+]+%[^+]+\n", nim, namaDepan, namaBelakang, kelas, dosen);
+        printf("\nData Ke-%i\n", penomeran);
 
-    // if (Baca != NULL)
-    // {
-        /* fscanf(Baca, "%[^+]+%[^+]+%[^+]+%[^+]+%[^+]+%[^+]", nomer, nim, namaDepan, namaBelakang, kelas, dosen);
-        printf("\nData Ke-%s\n", nomer);
         printf("NIM Mahasiswa : %s\n", nim);
         printf("Nama Mahasiswa : %s %s\n", namaDepan, namaBelakang);
         printf("Kelas Progdas : %s\n", kelas);
-        printf("Nama Dosen Pengampu : %s\n\n", dosen); */
+        printf("Nama Dosen Pengampu : %s\n\n", dosen);
 
-        while (!feof(Baca))
-        {
-            fscanf(Baca, "%[^+]+%[^+]+%[^+]+%[^+]+%[^+]+\n", nim, namaDepan, namaBelakang, kelas, dosen);
-            printf("\nData Ke-%i\n", penomeran);
+        penomeran++;
+    }
 
-            printf("NIM Mahasiswa : %s\n", nim);
-            printf("Nama Mahasiswa : %s %s\n", namaDepan, namaBelakang);
-            printf("Kelas Progdas : %s\n", kelas);
-            printf("Nama Dosen Pengampu : %s\n\n", dosen);
-
-            penomeran++;
-        }
-    // }
-    // else
-    // {
-    //     printf("Data Tidak Ada");
-    // }
-    // }
+    fclose(Baca);
 }

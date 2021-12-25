@@ -31,6 +31,7 @@ int main(){
     {
     case 1:
         createData();
+        
         break;
     case 2:
         readData();

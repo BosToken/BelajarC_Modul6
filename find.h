@@ -5,8 +5,8 @@ int SearchData()
     FILE *Baca;
     Baca = fopen("./Data/Data.txt", "r");
 
-    if (Baca != NULL)
-    {
+    // if (Baca != NULL)
+    // {
         printf("Anda Perlu Menginputkan NIM Untuk Dicari : ");
         scanf("%s", &search);
         while (!feof(Baca))
@@ -19,12 +19,10 @@ int SearchData()
                 printf("Nama Mahasiswa : %s %s\n", namaDepan, namaBelakang);
                 printf("Kelas Progdas : %s\n", kelas);
                 printf("Nama Dosen Pengampu : %s\n\n", dosen);
+                fclose(Baca);
                 return 0;
             }
         }
+        fclose(Baca);
         printf("Data Anda Tidak Ditemukan\n\n");
-    }
-    else
-    {
-    }
 }
